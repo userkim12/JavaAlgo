@@ -1,14 +1,15 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public long solution(long n) {
         String[] s = Long.toString(n).split("");
-        Arrays.sort(s);
+        Arrays.sort(s, Collections.reverseOrder());
+    
         StringBuilder sb = new StringBuilder();
-        for(int i = s.length-1;i>=0;i--){
-            sb.append(s[i]);
-        }
-        Long answer = Long.parseLong(sb.toString());
-        return answer;
+        Arrays.stream(s).mapToInt(Integer::parseInt).forEach(e->sb.append(e));
+        
+        return Long.parseLong(sb.toString());
+        
+        
     }
 }
