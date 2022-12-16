@@ -2,12 +2,8 @@ import java.util.*;
 
 class Solution {
     public String solution(String s) {
-        String answer = "";
-        char[] arr = s.toCharArray();
-        Arrays.sort(arr);
-        for(int i=arr.length-1;i>=0;i--){
-            answer += Character.toString(arr[i]);
-        }
-        return answer;
+        char[] tmp = s.toCharArray();
+        Arrays.sort(tmp);
+        return new StringBuilder(new String(tmp)).reverse().toString();
     }
 }
