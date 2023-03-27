@@ -3,9 +3,9 @@ class Solution {
         int total = 1;
         int count = 1;
         while(total <= n) {
-            total *= count;
             count++;                
+            total *= count;
         }
-        return count-2;
+        return count-1;
     }
 }
