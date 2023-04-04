@@ -1,12 +1,15 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(long n) {
-        String s = Long.toString(n);
-        int[] answer = new int[s.length()];
-        int j=0;
+        int[] answer = {};
+        char[] arr = Long.toString(n).toCharArray();
+        ArrayList<Character> list = new ArrayList<>();
         
-        for(int i=s.length()-1; i>=0; i--){
-            answer[j++] = s.charAt(i)-'0';
-        }
-        return answer;
+        for(int i=0;i<arr.length;i++)  list.add(arr[i]);
+        System.out.println(arr[0]);
+        Collections.reverse(list);
+        
+        return list.stream().mapToInt(m->m-48).toArray();
     }
 }
