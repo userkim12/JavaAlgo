@@ -1,8 +1,8 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public String solution(String[] seoul) {
-        int a = Arrays.asList(seoul).indexOf("Kim");
-        return "김서방은 " + a + "에 있다";
+
+        return "김서방은 " + Arrays.asList(seoul).indexOf("Kim") + "에 있다";
     }
 }
