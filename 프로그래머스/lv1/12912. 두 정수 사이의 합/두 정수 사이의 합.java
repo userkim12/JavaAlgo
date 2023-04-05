@@ -1,10 +1,11 @@
-import java.util.stream.LongStream;
+import java.util.*;
 
 class Solution {
     public long solution(int a, int b) {
-        int mx = a < b ? b : a;
-        int min = a < b ? a : b;
-
-        return (long) LongStream.rangeClosed(min, mx).sum();
+        long answer = 0;
+        for(int i=Math.min(a,b);i<=Math.max(a,b);i++) {
+            answer += i;
+        }
+        return answer;
     }
 }
