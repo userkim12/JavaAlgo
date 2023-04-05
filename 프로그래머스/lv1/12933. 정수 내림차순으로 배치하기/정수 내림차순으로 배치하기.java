@@ -2,14 +2,11 @@ import java.util.*;
 
 class Solution {
     public long solution(long n) {
-        String[] s = Long.toString(n).split("");
-        Arrays.sort(s, Collections.reverseOrder());
-    
-        StringBuilder sb = new StringBuilder();
-        Arrays.stream(s).mapToInt(Integer::parseInt).forEach(e->sb.append(e));
-        
-        return Long.parseLong(sb.toString());
-        
-        
+        char[] arr = Long.toString(n).toCharArray();
+        List<String> list = new ArrayList<>();
+        for(char c: arr) list.add(Character.toString(c));
+        Collections.sort(list, Collections.reverseOrder());
+        String s = String.join("", list);
+        return Long.parseLong(s);
     }
 }
