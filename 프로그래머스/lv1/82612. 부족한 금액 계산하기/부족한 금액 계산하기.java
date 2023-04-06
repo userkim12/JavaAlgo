@@ -1,8 +1,9 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long answer = 0;
-        for(int i=1;i<count+1;i++) answer += price*i;
-        
-        return answer < money?0:answer-money;
+        long sum = 0;
+        for(int i=1;i<=count;i++) sum += i * price;
+        long needs = sum - money;
+
+        return needs <= 0 ? 0 : needs;
     }
 }
