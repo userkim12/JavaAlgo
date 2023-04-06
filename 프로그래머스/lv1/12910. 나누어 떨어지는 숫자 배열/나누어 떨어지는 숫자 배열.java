@@ -1,19 +1,13 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        int[] li = new int[1000];
-        int index = 0;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i] % divisor == 0){
-                li[index] = arr[i];
-                index++;
-            }
+        ArrayList<Integer> list = new ArrayList<>();
+        for(int i=0; i<arr.length;i++) {
+            if(arr[i] % divisor == 0) list.add(arr[i]);
         }
-        int[] answer = Arrays.copyOfRange(li,0,index);
-        Arrays.sort(answer);
-        if(answer.length == 0)return new int[]{-1};
-        return answer;
-        
+        Collections.sort(list);
+
+        return list.size()==0 ? new int[]{-1} : list.stream().mapToInt(x->x).toArray();
     }
 }
