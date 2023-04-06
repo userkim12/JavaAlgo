@@ -1,10 +1,10 @@
 class Solution {
     public int solution(int[] absolutes, boolean[] signs) {
-        int ans = 0, i=0;
-        for(boolean b: signs) {
-            ans += b ? absolutes[i++] : -absolutes[i++];
+        int answer = 0;
+        for(int i=0;i<signs.length;i++) {
+            if(signs[i]) answer += absolutes[i];
+            else answer -= absolutes[i];
         }
-        
-        return ans;
+        return answer;
     }
 }
