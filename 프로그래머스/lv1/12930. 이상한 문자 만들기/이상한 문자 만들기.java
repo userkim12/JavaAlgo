@@ -1,23 +1,20 @@
 class Solution {
     public String solution(String s) {
-        String[] arr = s.split("");
-        String word = "";
+        String answer = "";
         int idx = 0;
-        for(int i=0;i<arr.length;i++){
-            if(arr[i].equals(" ")) {
+        int cnt = 0;
+        while(cnt < s.length()) {
+            String tmp = String.valueOf(s.charAt(cnt));
+            if(tmp.equals(" ")) {
                 idx = 0;
-                word += " ";
+                answer += " ";
+                cnt++;
+                continue;
             }
-            else if(idx % 2 == 0) {
-                word += arr[i].toUpperCase();
-                idx++;
-            }
-            else if(idx % 2 != 0){
-                word += arr[i].toLowerCase();
-                idx++;
-            }
-            
+            answer += idx % 2 == 0 ? tmp.toUpperCase() : tmp.toLowerCase();
+            cnt++;
+            idx++;
         }
-        return word;
+        return answer;
     }
 }
