@@ -2,14 +2,15 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] d, int budget) {
+        int cnt = 0;
         Arrays.sort(d);
-        int ans = 0;
-        for(int i=0;i<d.length;i++) {
-            if(budget >= d[i]) {
-                budget -= d[i];
-                ans++;
+        for(int i: d) {
+            if(budget - i >= 0) {
+                cnt++;
+                budget -= i;
             }
+            else break;
         }
-        return ans;
+        return cnt;
     }
 }
