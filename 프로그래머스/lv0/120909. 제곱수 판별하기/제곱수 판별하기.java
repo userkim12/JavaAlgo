@@ -4,6 +4,6 @@ class Solution {
     public int solution(int n) {
         double d = Math.sqrt(n);
         
-        return d == Math.floor(d)?1:2;
+        return d == Math.round(d)?1:2;
     }
 }
