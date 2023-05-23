@@ -23,18 +23,12 @@ public class Main {
             int sum = r1 + r2;
             int sub = Math.abs(r1-r2);
 
-//            if(dis == 0 && r1 == r2) sb.append("-1").append("\n");
-//            else if(dis > sum) sb.append("0").append("\n");
-//            else if(dis < sub) sb.append("0").append("\n");
-//            else if(dis == sum) sb.append("1").append("\n");
-//            else if(dis == sub) sb.append("1").append("\n");
-//            else sb.append("2").append("\n");
-
             if(dis == 0 && r1 == r2) sb.append("-1").append("\n");
             else if(dis > sum || dis < sub) sb.append("0").append("\n");
             else if(dis == sum || dis == sub) sb.append("1").append("\n");
             else sb.append("2").append("\n");
         }
-        System.out.println(sb.toString());
+        
+        System.out.println(sb);
     }
 }
