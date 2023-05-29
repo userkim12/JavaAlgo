@@ -1,15 +1,20 @@
 class Solution {
     public int[] solution(int n, int m) {
-        int[] answer = new int[2];
-        answer[0] = Sol.gcd(n,m);
-        answer[1] = (n * m) /answer[0];
-        return answer;
+        int[] answer = {};
+        
+        int a = gcd(n,m);
+        int b = (n*m) / a;
+        return new int[]{a,b};
     }
-}
-
-class Sol {
-    public static int gcd(int num1, int num2){
-        if(num2 == 0) return num1;
-        else return gcd(num2, num1 % num2);
+    
+    private int gcd(int a, int b) {
+        while(b != 0) {
+            int r = a % b;
+            
+            a = b;
+            b = r;
+        }
+        
+        return a;
     }
 }
