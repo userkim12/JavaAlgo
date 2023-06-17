@@ -2,14 +2,13 @@ import java.util.*;
 
 class Solution {
     public int[] solution(long n) {
-        int[] answer = {};
-        char[] arr = Long.toString(n).toCharArray();
-        ArrayList<Character> list = new ArrayList<>();
-        
-        for(int i=0;i<arr.length;i++)  list.add(arr[i]);
-        System.out.println(arr[0]);
-        Collections.reverse(list);
-        
-        return list.stream().mapToInt(m->m-48).toArray();
+        String s = String.valueOf(n);
+        int len = s.length();
+        int[] answer = new int[len];
+        for(int i=len-1;i>=0;i--) {
+            answer[i] = s.charAt(len-i-1)-'0';
+        }
+
+        return answer;
     }
 }
