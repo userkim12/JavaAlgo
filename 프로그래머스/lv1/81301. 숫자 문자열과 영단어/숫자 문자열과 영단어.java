@@ -4,7 +4,7 @@ class Solution {
         String[] numbers = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
         String tmp = s;
         for(int i=0;i<numbers.length;i++) {
-            tmp = tmp.replace(numbers[i], String.valueOf(i));
+            tmp = tmp.replace(numbers[i], i+"");
         }
 
         return Integer.parseInt(tmp);
