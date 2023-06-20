@@ -6,7 +6,7 @@ class Solution {
         for(int i=0;i<numbers.length;i++) {
             tmp = tmp.replace(numbers[i], String.valueOf(i));
         }
-        
+
         return Integer.parseInt(tmp);
     }
 }
