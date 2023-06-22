@@ -18,19 +18,11 @@ class Solution {
                 tmp.add(cards2[idx2]);
                 idx2++;
             }
-            pointer++;
+            else return "No";
             check++;
+            pointer++;
         }
         
-        if(tmp.size() != goal.length) return "No";
-        
-        String answer = "Yes";
-        for (int i = 0; i < goal.length; i++) {
-            if(!(tmp.get(i).equals(goal[i]))) {
-                answer = "No";
-                break;
-            }
-        }
-        return answer;
+        return "Yes";
     }
 }
